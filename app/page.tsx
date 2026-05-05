@@ -6,11 +6,9 @@ export default function Home() {
       <h1>Hello world!</h1>
       <p>This is a Next.js website.</p>
       <div className="not-prose flex gap-2">
-        <Button className="w-min">Click Me!</Button>
+        <Button>Click Me!</Button>
         <Button variant="outline">Me Too!</Button>
-        <Button className="w-min" disabled>
-          Not Me, I'm Disabled
-        </Button>
+        <Button disabled>Not Me, I'm Disabled</Button>
       </div>
       <h2>Heading 2</h2>
       <p className="text-xs text-muted-foreground">
