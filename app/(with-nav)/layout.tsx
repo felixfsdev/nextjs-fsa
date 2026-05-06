@@ -9,14 +9,7 @@ export default function WithNavLayout({
 }) {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar navLinks={[{ label: "Home", path: "/" }]}>
-        <a href="https://github.com/felixfsdev/">
-          <Button className="bg-black text-white hover:bg-gray-700 dark:bg-white dark:text-black dark:hover:bg-gray-300">
-            <SiGithub className="size-4 mr-2" />
-            GitHub
-          </Button>
-        </a>
-      </Navbar>
+      <Navbar navLinks={[{ label: "Home", path: "/" }]} />
       <main className="flex-1">{children}</main>
     </div>
   );

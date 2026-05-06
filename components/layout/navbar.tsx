@@ -1,5 +1,9 @@
-import { Flame } from "lucide-react";
+import { Contrast, Flame, Moon, Sun } from "lucide-react";
 import Link from "next/link";
+import { Button } from "../ui/button";
+import { useTheme } from "next-themes";
+import { cn } from "@/lib/utils";
+import ThemeToggle from "../ui/theme-toggle";
 
 type NavbarProps = {
   navLinks: { label: string; path: string }[];
@@ -13,7 +17,7 @@ export default function Navbar({ navLinks, children }: NavbarProps) {
         <Link href="/" className="hover:text-primary">
           <Flame className="size-6 stroke-1 mr-2" />
         </Link>
-        <ul className="flex gap-4 ml-4">
+        <ul className="flex gap-4 ml-4 items-center">
           {navLinks.map((link) => (
             <li key={link.path}>
               <Link href={link.path} className="hover:text-primary">
@@ -23,7 +27,10 @@ export default function Navbar({ navLinks, children }: NavbarProps) {
           ))}
         </ul>
       </div>
-      <div>{children}</div>
+      <div className="flex items-center gap-2">
+        {children}
+        <ThemeToggle />
+      </div>
     </nav>
   );
 }
