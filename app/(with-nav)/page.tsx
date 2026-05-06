@@ -1,8 +1,9 @@
+import { Prose } from "@/components/typography/prose";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="prose max-w-2xl w-full mx-auto p-4 dark:prose-invert">
+    <Prose className="max-w-2xl w-full mx-auto p-4">
       <h1>Hello world!</h1>
       <p>This is a Next.js website.</p>
       <div className="not-prose flex flex-wrap gap-2">
@@ -20,6 +21,6 @@ export default function Home() {
         server-rendered applications. It provides features like automatic code
         splitting, optimized performance, and a great developer experience.
       </p>
-    </div>
+    </Prose>
   );
 }
