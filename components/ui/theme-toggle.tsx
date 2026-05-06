@@ -14,13 +14,6 @@ const iconVariants = {
     scale: 1,
     transition: { type: "spring" as const, stiffness: 280, damping: 24 },
   },
-  exit: {
-    opacity: 0,
-    y: 12,
-    rotate: 20,
-    scale: 0.8,
-    transition: { duration: 0.18 },
-  },
 } as const;
 
 export default function ThemeToggle() {
@@ -67,7 +60,6 @@ export default function ThemeToggle() {
           variants={iconVariants}
           initial="initial"
           animate="animate"
-          exit="exit"
           className="flex items-center justify-center"
         >
           {icon}
