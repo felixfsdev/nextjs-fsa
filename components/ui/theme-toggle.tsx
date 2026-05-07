@@ -36,9 +36,9 @@ export default function ThemeToggle() {
 
   const icon =
     theme === "light" ? (
-      <Moon className="size-6 stroke-1 hover:text-primary transition-all duration-100" />
-    ) : theme === "dark" ? (
       <Sun className="size-6 stroke-1 hover:text-primary transition-all duration-100" />
+    ) : theme === "dark" ? (
+      <Moon className="size-6 stroke-1 hover:text-primary transition-all duration-100" />
     ) : (
       <Contrast className="size-6 stroke-1 hover:text-primary transition-all duration-100" />
     );
