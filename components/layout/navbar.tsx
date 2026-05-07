@@ -12,7 +12,7 @@ type NavbarProps = {
 
 export default function Navbar({ navLinks, children }: NavbarProps) {
   return (
-    <nav className="flex items-center justify-between p-2 border-b">
+    <nav className="sticky top-0 z-100 flex items-center justify-between p-2 border-b bg-background/80 backdrop-blur">
       <div className="flex p-2">
         <Link href="/" className="hover:text-primary">
           <Flame className="size-6 stroke-1 mr-2" />
