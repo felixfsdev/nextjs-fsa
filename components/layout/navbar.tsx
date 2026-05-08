@@ -103,7 +103,7 @@ function NavDrawer({ navLinks }: { navLinks: NavItem[] }) {
         <Menu className="stroke-1 mr-2 hover:text-primary transition-colors duration-100" />
       </DrawerTrigger>
 
-      <DrawerContent>
+      <DrawerContent className="text-foreground">
         <DrawerHeader className="gap-2">
           <DrawerTitle className="text-3xl font-bold my-2">Links</DrawerTitle>
           {navLinks.map((item, idx) => {
