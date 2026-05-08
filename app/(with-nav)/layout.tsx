@@ -9,7 +9,19 @@ export default function WithNavLayout({
 }) {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar navLinks={[{ label: "Home", path: "/" }]} />
+      <Navbar
+        navLinks={[
+          { type: "link", label: "Home", path: "/" },
+          {
+            type: "dropdown",
+            label: "Fake",
+            links: [
+              { label: "Sub Item 1", path: "/fake/1" },
+              { label: "Sub Item 2", path: "/fake/2" },
+            ],
+          },
+        ]}
+      />
       <main className="flex-1">{children}</main>
     </div>
   );
