@@ -107,7 +107,7 @@ function NavDrawer({ navLinks }: { navLinks: NavItem[] }) {
 
       <DrawerContent>
         <DrawerHeader className="gap-2">
-          <h1 className="text-3xl font-bold my-2">Links</h1>
+          <DrawerTitle className="text-3xl font-bold my-2">Links</DrawerTitle>
           {navLinks.map((item, idx) => {
             if (item.type === "link") {
               return (
