@@ -40,9 +40,7 @@ export default function Navbar({ navLinks, children }: NavbarProps) {
   return (
     <nav className="sticky top-0 z-10 flex items-center justify-between p-2 border-b bg-background/80 backdrop-blur">
       <div className="flex p-2 items-center">
-        <Link href="/" className="hover:text-primary">
-          <Flame className="size-6 stroke-1 mr-2" />
-        </Link>
+        <h1 className="text-foreground text-xl font-bold">fsa</h1>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex ml-4">
@@ -102,7 +100,7 @@ function NavDrawer({ navLinks }: { navLinks: NavItem[] }) {
   return (
     <Drawer direction="right">
       <DrawerTrigger className="md:hidden">
-        <Menu className="stroke-1 mr-2" />
+        <Menu className="stroke-1 mr-2 hover:text-primary transition-colors duration-100" />
       </DrawerTrigger>
 
       <DrawerContent>
