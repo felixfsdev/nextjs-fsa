@@ -40,6 +40,7 @@ export default function SignUpForm() {
         },
         onSuccess: (ctx) => {
           //redirect to the dashboard or sign in page
+          alert("Success");
         },
         onError: (ctx) => {
           // display the error message
