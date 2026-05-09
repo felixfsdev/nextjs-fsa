@@ -14,12 +14,13 @@ export default function WithNavLayout({
           { type: "link", label: "Home", path: "/" },
           {
             type: "dropdown",
-            label: "Fake",
+            label: "Sample Dropdown",
             links: [
               { label: "Sub Item 1", path: "/fake/1" },
               { label: "Sub Item 2", path: "/fake/2" },
             ],
           },
+          { type: "link", label: "Sign Up", path: "/sign-up" },
         ]}
       />
       <main className="flex-1">{children}</main>
