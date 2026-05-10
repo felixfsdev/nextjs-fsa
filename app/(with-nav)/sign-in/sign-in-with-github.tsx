@@ -1,10 +1,10 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { Button } from "./button";
+import { Button } from "@/components/ui/button";
 import { SiGithub } from "react-icons/si";
 import { useState } from "react";
-import { Spinner } from "./spinner";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function SignInWithGitHub() {
   const [loading, setLoading] = useState(false);
@@ -23,8 +23,8 @@ export default function SignInWithGitHub() {
   return (
     <Button
       type="button"
-      variant="outline"
-      className="w-full p-2"
+      className="w-full"
+      size="lg"
       onClick={handleClick}
       disabled={loading}
     >
