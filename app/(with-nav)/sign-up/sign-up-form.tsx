@@ -2,11 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Spinner } from "@/components/ui/spinner";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 export default function SignUpForm() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
   async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -15,6 +19,7 @@ export default function SignUpForm() {
     const name = formData.get("name");
 
     if (!email || !password || !name) {
+      setError("All fields are required.");
       return;
     }
 
@@ -23,6 +28,7 @@ export default function SignUpForm() {
       typeof password !== "string" ||
       typeof name !== "string"
     ) {
+      setError("An error occured. Please try again.");
       return;
     }
 
@@ -36,15 +42,14 @@ export default function SignUpForm() {
       },
       {
         onRequest: (ctx) => {
-          //show loading
+          setLoading(true);
         },
         onSuccess: (ctx) => {
-          //redirect to the dashboard or sign in page
-          alert("Success");
+          window.location.href = "/";
         },
         onError: (ctx) => {
-          // display the error message
-          alert(ctx.error.message);
+          setLoading(false);
+          setError(ctx.error.message);
         },
       },
     );
@@ -58,11 +63,21 @@ export default function SignUpForm() {
       <Input type="email" name="email" />
       <label htmlFor="password">Password</label>
       <Input type="password" name="password" />
+      {error && <p className="text-destructive">{error}</p>}
       <div className="mt-3 flex justify-between">
         <Link href="/">
           <Button variant="outline">Go Back</Button>
         </Link>
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit" className="w-50" disabled={loading}>
+          {loading ? (
+            <>
+              <Spinner />
+              Signing Up
+            </>
+          ) : (
+            "Sign Up"
+          )}
+        </Button>
       </div>
     </form>
   );
