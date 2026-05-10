@@ -1,6 +1,6 @@
 "use client";
 
-import { Flame, Menu } from "lucide-react";
+import { Flame, Menu, X } from "lucide-react";
 import Link from "next/link";
 import ThemeToggle from "@/components/ui/theme-toggle";
 import {
@@ -40,6 +40,7 @@ export default function Navbar({ navLinks, children }: NavbarProps) {
   return (
     <nav className="sticky top-0 z-10 flex items-center justify-between p-2 border-b bg-background/80 backdrop-blur">
       <div className="flex p-2 items-center">
+        <NavDrawer navLinks={navLinks} />
         <h1 className="text-foreground text-xl font-bold">fsa</h1>
 
         {/* Desktop Nav */}
@@ -90,7 +91,6 @@ export default function Navbar({ navLinks, children }: NavbarProps) {
       <div className="flex items-center gap-2">
         {children}
         <ThemeToggle />
-        <NavDrawer navLinks={navLinks} />
       </div>
     </nav>
   );
@@ -98,14 +98,19 @@ export default function Navbar({ navLinks, children }: NavbarProps) {
 
 function NavDrawer({ navLinks }: { navLinks: NavItem[] }) {
   return (
-    <Drawer direction="right">
+    <Drawer direction="left">
       <DrawerTrigger className="md:hidden">
         <Menu className="stroke-1 mr-2 hover:text-primary transition-colors duration-100" />
       </DrawerTrigger>
 
       <DrawerContent className="text-foreground">
         <DrawerHeader className="gap-2">
-          <DrawerTitle className="text-3xl font-bold my-2">Links</DrawerTitle>
+          <DrawerClose asChild>
+            <Button variant="ghost" size="icon">
+              <X className="size-6" />
+            </Button>
+          </DrawerClose>
+          <DrawerTitle className="text-2xl font-bold">Links</DrawerTitle>
           {navLinks.map((item, idx) => {
             if (item.type === "link") {
               return (
@@ -133,12 +138,6 @@ function NavDrawer({ navLinks }: { navLinks: NavItem[] }) {
             );
           })}
         </DrawerHeader>
-
-        <DrawerFooter>
-          <DrawerClose asChild>
-            <Button variant="outline">Close</Button>
-          </DrawerClose>
-        </DrawerFooter>
       </DrawerContent>
     </Drawer>
   );
