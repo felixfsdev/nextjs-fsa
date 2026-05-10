@@ -58,7 +58,7 @@ export default function SignUpForm() {
 
   return (
     <form className="flex flex-col gap-2" onSubmit={handleSubmit} noValidate>
-      <label htmlFor="name">Name</label>
+      {/* <label htmlFor="name">Name</label>
       <Input type="text" name="name" />
       <label htmlFor="email">Email</label>
       <Input type="email" name="email" />
@@ -85,7 +85,7 @@ export default function SignUpForm() {
         <div className="flex-1 border-b" />
         <div>or</div>
         <div className="flex-1 border-b" />
-      </div>
+      </div> */}
       <SignInWithGitHub />
     </form>
   );

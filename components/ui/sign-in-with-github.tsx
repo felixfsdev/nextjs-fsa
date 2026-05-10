@@ -29,7 +29,7 @@ export default function SignInWithGitHub() {
       disabled={loading}
     >
       <SiGithub className="mr-2 h-4 w-4" />
-      Continue with GitHub
+      Sign in with GitHub
       {loading && <Spinner />}
     </Button>
   );
