@@ -6,12 +6,6 @@ export default function Home() {
     <Prose className="max-w-2xl w-full mx-auto p-4 py-8">
       <h1>Hello world!</h1>
       <p>This is a Next.js website.</p>
-      <div className="not-prose flex flex-wrap gap-2">
-        <Button>Click Me!</Button>
-        <Button variant="outline">Me Too!</Button>
-        <Button variant="secondary">I'm Secondary</Button>
-        <Button disabled>I'm Disabled</Button>
-      </div>
 
       <hr />
 

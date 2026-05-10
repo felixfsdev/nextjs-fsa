@@ -29,9 +29,14 @@ export default async function WithNavLayout({
         ]}
       >
         {session === null ? (
-          <Link href="/sign-up">
-            <Button>Sign Up</Button>
-          </Link>
+          <>
+            <Link href="/sign-in">
+              <Button variant="outline">Sign In</Button>
+            </Link>
+            <Link href="/sign-up">
+              <Button>Sign Up</Button>
+            </Link>
+          </>
         ) : (
           <Link href="/sign-out">
             <Button variant="outline">Sign Out</Button>
