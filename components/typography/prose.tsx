@@ -8,12 +8,7 @@ export function Prose({
   className?: string;
 }) {
   return (
-    <div
-      className={cn(
-        "prose text-foreground prose-headings:text-foreground dark:prose-invert",
-        className,
-      )}
-    >
+    <div className={cn("prose prose-primary dark:prose-invert", className)}>
       {children}
     </div>
   );
