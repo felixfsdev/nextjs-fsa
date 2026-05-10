@@ -7,10 +7,13 @@ export function Prose({
   children: React.ReactNode;
   className?: string;
 }) {
+  const layoutStyles = cn("w-full max-w-3xl mx-auto p-4");
+
   return (
     <div
       className={cn(
-        "prose text-foreground prose-headings:text-foreground dark:prose-invert",
+        "prose prose-primary dark:prose-invert",
+        layoutStyles,
         className,
       )}
     >
