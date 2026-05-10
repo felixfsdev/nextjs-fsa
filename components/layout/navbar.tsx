@@ -40,8 +40,10 @@ export default function Navbar({ navLinks, children }: NavbarProps) {
   return (
     <nav className="sticky top-0 z-10 flex items-center justify-between p-2 border-b bg-background/80 backdrop-blur">
       <div className="flex p-2 items-center">
-        <NavDrawer navLinks={navLinks} />
-        <h1 className="text-foreground text-xl font-bold">fsa</h1>
+        <div className="flex gap-2">
+          <NavDrawer navLinks={navLinks} />
+          <h1 className="text-foreground text-xl font-bold">fsa</h1>
+        </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex ml-4">
@@ -99,8 +101,10 @@ export default function Navbar({ navLinks, children }: NavbarProps) {
 function NavDrawer({ navLinks }: { navLinks: NavItem[] }) {
   return (
     <Drawer direction="left">
-      <DrawerTrigger className="md:hidden">
-        <Menu className="stroke-1 mr-2 hover:text-primary transition-colors duration-100" />
+      <DrawerTrigger className="md:hidden" asChild>
+        <Button variant="ghost" size="icon">
+          <Menu className="size-6" />
+        </Button>
       </DrawerTrigger>
 
       <DrawerContent className="text-foreground">
