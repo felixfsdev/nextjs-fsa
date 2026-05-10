@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import SignInWithGitHub from "@/components/ui/sign-in-with-github";
 import React, { useState } from "react";
 
 export default function SignInForm() {
@@ -78,6 +79,12 @@ export default function SignInForm() {
           )}
         </Button>
       </div>
+      <div className="flex items-center gap-4 my-2">
+        <div className="flex-1 border-b" />
+        <div>or</div>
+        <div className="flex-1 border-b" />
+      </div>
+      <SignInWithGitHub />
     </form>
   );
 }
