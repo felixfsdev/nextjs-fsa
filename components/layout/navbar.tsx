@@ -1,13 +1,12 @@
 "use client";
 
-import { Flame, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import ThemeToggle from "@/components/ui/theme-toggle";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
