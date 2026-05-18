@@ -4,5 +4,6 @@
     "strings": "on"
   },
   "css.lint.unknownAtRules": "ignore",
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }
