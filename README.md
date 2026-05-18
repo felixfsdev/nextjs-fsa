@@ -19,7 +19,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ### Database migration
 
--
+- Update `@/db/schema/index.ts`
+- Run `npx drizzle-kit generate`
+- Run `npx drizzle-kit migrate`
 
 ## Auth mental model (dumb)
 
