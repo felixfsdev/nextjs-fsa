@@ -40,7 +40,7 @@ export default async function WithNavLayout({
           </Link>
         )}
       </Navbar>
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 md:py-4">{children}</main>
     </div>
   );
 }
