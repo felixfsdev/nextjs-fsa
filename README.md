@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Instuctions
 
+### Quick setup
+
 - `npm i`
 - `npm i -g vercel` (ina)
 - `vercel login`
@@ -11,7 +13,15 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - `vercel env pull .env` (pull as `.env` instead of `.env.local`)
 - `npm run dev`
 
-## Mental model (dumb)
+### Other useful commands
+
+- `npx drizzle-kit studio`
+
+### Database migration
+
+Pending.
+
+## Auth mental model (dumb)
 
 - There is a `db` instance in `db.ts` (<https://orm.drizzle.team/docs/tutorials/drizzle-with-neon>)
 - `auth.ts` uses this instance to create and export the `auth` thing, which we can use outside
