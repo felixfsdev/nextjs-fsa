@@ -4,7 +4,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Instuctions
 
-`npm i`, `npm run dev`, visit <http://localhost:3000/>.
+- `npm i`
+- `npm i -g vercel` (ina)
+- `vercel login`
+- `vercel link` (don't pull environment variables now)
+- `vercel env pull .env` (pull as `.env` instead of `.env.local`)
+- `npm run dev`
 
 ## Mental model (dumb)
 
