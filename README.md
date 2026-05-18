@@ -23,6 +23,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - Run `npx drizzle-kit generate`
 - Run `npx drizzle-kit migrate`
 
+> [!TIP]
+> Create a development branch in Neon instead of using the main branch.
+
 ## Auth mental model (dumb)
 
 - There is a `db` instance in `db.ts` (<https://orm.drizzle.team/docs/tutorials/drizzle-with-neon>)
