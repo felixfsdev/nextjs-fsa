@@ -4,8 +4,9 @@ import { auth } from "@/lib/auth";
 import SignOutBtn from "./_components/sign-out-btn";
 import { headers } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
-export default async function WithNavLayout({
+export default async function RoomsLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -14,18 +15,14 @@ export default async function WithNavLayout({
     headers: await headers(),
   });
 
+  if (session === null) {
+    redirect("/sign-in");
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar navLinks={[{ type: "link", label: "Home", path: "/" }]}>
-        {session === null ? (
-          <>
-            <Link href="/sign-in">
-              <Button>Sign In</Button>
-            </Link>
-          </>
-        ) : (
-          <SignOutBtn />
-        )}
+      <Navbar navLinks={[{ type: "link", label: "Rooms", path: "/rooms" }]}>
+        <SignOutBtn />
       </Navbar>
       <main className="flex-1 md:py-4">{children}</main>
     </div>

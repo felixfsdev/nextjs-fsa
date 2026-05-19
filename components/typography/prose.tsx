@@ -7,7 +7,7 @@ export function Prose({
   children: React.ReactNode;
   className?: string;
 }) {
-  const layoutStyles = cn("w-full max-w-3xl mx-auto p-4");
+  const layoutStyles = cn("w-full max-w-3xl mx-auto px-4 py-8");
 
   return (
     <div

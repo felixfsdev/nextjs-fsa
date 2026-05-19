@@ -13,9 +13,9 @@ export default function SignInWithGitHub() {
     setLoading(true);
     await authClient.signIn.social({
       provider: "github",
-      callbackURL: "/",
-      errorCallbackURL: "/",
-      newUserCallbackURL: "/",
+      callbackURL: "/rooms",
+      errorCallbackURL: "/sign-in",
+      newUserCallbackURL: "/rooms",
       disableRedirect: false,
     });
   }
@@ -23,8 +23,7 @@ export default function SignInWithGitHub() {
   return (
     <Button
       type="button"
-      className="w-full"
-      size="lg"
+      className="w-60"
       onClick={handleClick}
       disabled={loading}
     >

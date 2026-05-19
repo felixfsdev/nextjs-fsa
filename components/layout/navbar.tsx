@@ -41,7 +41,9 @@ export default function Navbar({ navLinks, children }: NavbarProps) {
       <div className="flex p-2 items-center">
         <div className="flex gap-2">
           <NavDrawer navLinks={navLinks} />
-          <h1 className="text-foreground text-xl font-bold">fsa</h1>
+          <Link href="/">
+            <h1 className="text-foreground text-xl font-bold">fsa</h1>
+          </Link>
         </div>
 
         {/* Desktop Nav */}
