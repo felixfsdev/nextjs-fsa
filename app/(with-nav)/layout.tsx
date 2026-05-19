@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
+import SignOutBtn from "./_components/sign-out-btn";
 import { headers } from "next/headers";
 import Link from "next/link";
 
@@ -35,9 +36,7 @@ export default async function WithNavLayout({
             </Link>
           </>
         ) : (
-          <Link href="/sign-out">
-            <Button variant="outline">Sign Out</Button>
-          </Link>
+          <SignOutBtn />
         )}
       </Navbar>
       <main className="flex-1 md:py-4">{children}</main>
