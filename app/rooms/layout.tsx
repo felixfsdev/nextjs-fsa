@@ -16,19 +16,7 @@ export default async function WithNavLayout({
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar
-        navLinks={[
-          { type: "link", label: "Home", path: "/" },
-          {
-            type: "dropdown",
-            label: "Sample Dropdown",
-            links: [
-              { label: "Sub Item 1", path: "/fake/1" },
-              { label: "Sub Item 2", path: "/fake/2" },
-            ],
-          },
-        ]}
-      >
+      <Navbar navLinks={[{ type: "link", label: "Home", path: "/" }]}>
         {session === null ? (
           <>
             <Link href="/sign-in">
