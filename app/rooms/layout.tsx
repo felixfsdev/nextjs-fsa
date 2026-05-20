@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
-import YourRooms from "./_components/your-room";
+import YourRooms from "./_components/your-rooms";
 
 export default async function RoomsLayout({
   children,

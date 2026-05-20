@@ -31,7 +31,9 @@ export default async function YourRooms() {
         </ul>
       )}
 
-      <Button>Create Room</Button>
+      <Button variant={rooms.length === 0 ? "default" : "outline"}>
+        Create Room
+      </Button>
     </div>
   );
 }
