@@ -6,6 +6,8 @@ export const room = pgTable("room", {
     .primaryKey()
     .$defaultFn(() => crypto.randomUUID()),
 
+  name: text("name").notNull(),
+
   ownerId: text("owner_id")
     .notNull()
     .references(() => user.id, { onDelete: "cascade" }),
