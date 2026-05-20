@@ -20,11 +20,11 @@ export default async function RoomsLayout({
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-dvh flex flex-col">
       <Navbar navLinks={[{ type: "link", label: "Rooms", path: "/rooms" }]}>
         <SignOutBtn />
       </Navbar>
-      <main className="flex-1 md:py-4">{children}</main>
+      <main className="flex-1 overflow-hidden">{children}</main>
     </div>
   );
 }

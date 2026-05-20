@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { db } from "@/db";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
@@ -16,8 +17,8 @@ export default async function YourRooms() {
   });
 
   return (
-    <div className="flex flex-col gap-4">
-      <h2 className="text-4xl font-bold">Your Rooms</h2>
+    <div className="flex flex-col gap-2">
+      <h2 className="text-2xl font-bold">Your Rooms</h2>
       {rooms.length === 0 ? (
         <p>You don't have any rooms yet. Create one to get started!</p>
       ) : (
@@ -29,6 +30,8 @@ export default async function YourRooms() {
           ))}
         </ul>
       )}
+
+      <Button>Create Room</Button>
     </div>
   );
 }
