@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
-import YourRooms from "./_components/your-rooms";
+import YourRooms from "./_components/your-room";
 
 export default async function RoomsLayout({
   children,
@@ -29,7 +29,11 @@ export default async function RoomsLayout({
       <main className="flex-1 overflow-hidden">
         <div className="flex gap-2 p-2 w-full h-full min-w-xl">
           <div className="flex flex-2 border h-full flex-col p-4 gap-2 overflow-y-auto">
-            <Suspense fallback={<p>Loading your rooms...</p>}>
+            <Suspense
+              fallback={
+                <p className="w-full text-center">Loading your rooms...</p>
+              }
+            >
               <YourRooms />
             </Suspense>
           </div>
